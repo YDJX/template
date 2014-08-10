@@ -1,14 +1,19 @@
 package org.daemon.belief.mythink.pojo;
 
+import java.util.Set;
+
 public class Usergroup {
 
 	private int usergId;
-	private long priVal;
+	private long priVal; //权限值 privilege value
 	private String groupName;
 	private String description;
 	private boolean readable;
 	private boolean writable;
 	private boolean executable;
+	
+	private Set<UserGroupRel> ugrels;
+	private Set<GroupRoleRel> grrels;
 
 	public int getUsergId() {
 		return usergId;
@@ -64,6 +69,22 @@ public class Usergroup {
 
 	public void setExecutable(boolean executable) {
 		this.executable = executable;
+	}
+
+	public Set<UserGroupRel> getUgrels() {
+		return ugrels;
+	}
+
+	public void setUgrels(Set<UserGroupRel> ugrels) {
+		this.ugrels = ugrels;
+	}
+
+	public Set<GroupRoleRel> getGrrels() {
+		return grrels;
+	}
+
+	public void setGrrels(Set<GroupRoleRel> grrels) {
+		this.grrels = grrels;
 	}
 
 }
